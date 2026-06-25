@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="google-site-verification" content="Lq0CJKmlO8UzY7Cu4gZ1Y0tUgVXRXkXPfoaF1IwC2iU" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+  <link rel="canonical" href="https://tigertype.app/" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5770484977790849" crossorigin="anonymous"></script>
+  <title>TigerType – Free Online Typing Test | Improve WPM &amp; Typing Accuracy</title>
+  <meta name="author" content="TigerType">
+  <meta name="description" content="Take the TigerType free online typing test to improve your words per minute (WPM) and typing accuracy. Train with timed challenges, structured lessons, and focused practice designed to increase speed and precision.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="typing test, typing speed test, free typing test, words per minute test, WPM test, improve typing speed, typing accuracy practice, online typing trainer">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="TigerType – Free Online Typing Test" />
+  <meta property="og:description" content="Measure your WPM and typing accuracy with timed tests, structured lessons, and focused practice." />
+  <meta property="og:url" content="https://tigertype.app/" />
+  <meta property="og:site_name" content="TigerType" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="TigerType – Free Online Typing Test" />
+  <meta name="twitter:description" content="Measure your WPM and typing accuracy with timed tests, structured lessons, and focused practice." />
+
+  <!-- Inline SVG Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f97316'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='bold' font-size='16' fill='white'%3ETT%3C/text%3E%3C/svg%3E" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "TigerType",
+    "url": "https://tigertype.app/",
+    "description": "Free online typing test to improve WPM and typing accuracy.",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Do you store what I type?", "acceptedAnswer": { "@type": "Answer", "text": "No. Everything you type is processed in your browser. TigerType does not save your text." } },
+      { "@type": "Question", "name": "Is TigerType really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can use the tests, practice mode, and lessons for free." } },
+      { "@type": "Question", "name": "How accurate are the WPM and accuracy scores?", "acceptedAnswer": { "@type": "Answer", "text": "TigerType follows the standard typing formula: every 5 characters count as one word." } },
+      { "@type": "Question", "name": "How often should I practice?", "acceptedAnswer": { "@type": "Answer", "text": "Short daily sessions work best. Even 10–15 minutes per day of focused practice adds up quickly." } },
+      { "@type": "Question", "name": "Can I use TigerType at work or school?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. TigerType runs in the browser and requires no installation." } }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --bg-alt: #171717;
+      --primary: #f97316;
+      --primary-soft: #3b1d0f;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --border: #262626;
+      --error: #ef4444;
+      --success: #22c55e;
+      --radius: 10px;
+      --shadow-soft: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    @keyframes caretBlink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    #leaderboard-list {
+      margin: 0;
+      padding-left: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    #leaderboard-list li { margin-bottom: 4px; }
+
+    html { scroll-behavior: smooth; }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ── Skip to content (accessibility) ── */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 1rem;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 0 0 var(--radius) var(--radius);
+      z-index: 100;
+      font-size: 0.85rem;
+    }
+    .skip-link:focus { top: 0; }
+
+    .card { transition: transform 0.2s ease; }
+    .card:hover { transform: translateY(-2px); }
+    .typing-area { overflow-wrap: anywhere; }
+
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-name {
+      color: var(--text);
+      letter-spacing: 0.5px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .nav-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: bold;
+      box-shadow: 0 0 12px rgba(249,115,22,0.45);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover {
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+
+    /* ── Mobile hamburger menu ── */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.25rem;
+      line-height: 1;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      padding: 0.5rem 1.25rem 1rem;
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      padding: 0.6rem 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu a:hover { color: var(--primary); }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.25rem;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 0.5rem;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0 0 0.75rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2.3fr) minmax(0, 1.2fr);
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    .card {
+      background: #1f1f1f;
+      border-radius: var(--radius);
+      padding: 1.25rem 1.25rem 1.5rem;
+      border: 1px solid #2a2a2a;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.45), 0 2px 6px rgba(0,0,0,0.35);
+    }
+
+    .card-header {
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .controls-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      align-items: center;
+    }
+
+    .control-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      align-items: center;
+    }
+
+    .control-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-right: 0.25rem;
+    }
+
+    /* ── FIX #2: Dark-themed pill toggles ── */
+    .pill-toggle {
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      padding: 0.15rem;
+      display: inline-flex;
+      background: #1a1a1a;
+    }
+
+    .pill-toggle button {
+      border: none;
+      background: transparent;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      color: var(--muted);
+    }
+
+    .pill-toggle button.active { background: var(--primary); color: #fff; }
+    .pill-toggle button:not(.active):hover { background: #2a2a2a; color: var(--text); }
+
+    .btn {
+      border-radius: 999px;
+      border: none;
+      padding: 0.5rem 0.95rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+    }
+
+    .btn-primary { background: var(--primary); color: #fff; }
+    /* ── FIX #2: Dark-themed secondary button ── */
+    .btn-secondary { background: #2a2a2a; color: var(--text); border: 1px solid var(--border); }
+    .btn-primary:hover { background: #ea580c; }
+    .btn-secondary:hover { background: #333; }
+
+    .typing-area {
+      margin-top: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #2a2a2a;
+      padding: 0.75rem;
+      background: #121212;
+      color: var(--text);
+      min-height: 120px;
+      font-size: 0.95rem;
+      box-shadow: 0 0 0 1px rgba(249,115,22,0.15), 0 0 25px rgba(249,115,22,0.08);
+    }
+
+    .typing-text {
+      margin-bottom: 0.75rem;
+      user-select: none;
+      cursor: default;
+    }
+
+    .typing-text span {
+      white-space: pre-wrap;
+      word-break: break-word;
+      color: var(--text);
+    }
+
+    .typing-text .correct { color: #22c55e; }
+
+    .typing-text .incorrect {
+      background: rgba(239,68,68,0.2);
+      color: #ef4444;
+      text-decoration: underline;
+    }
+
+    .typing-text .current {
+      border-left: 2px solid var(--primary);
+      padding-left: 2px;
+      animation: caretBlink 1s infinite;
+    }
+
+    .typing-input {
+      caret-color: var(--primary);
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.6rem;
+      font-size: 0.95rem;
+      outline: none;
+      background: #0f0f0f;
+      color: var(--text);
+    }
+
+    .typing-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px rgba(249,115,22,0.2);
+    }
+
+    .typing-input::placeholder { color: #6b7280; }
+
+    .stats-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .stats-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .stat { font-size: 0.8rem; color: var(--muted); }
+
+    .stat strong {
+      font-weight: 600;
+      color: var(--text);
+      margin-left: 0.1rem;
+    }
+
+    .timer {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .section { margin-top: 2rem; }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      background: #1f1f1f;
+      padding: 1rem 1.25rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      margin-bottom: 1rem;
+    }
+
+    .section-header p { margin-bottom: 0; }
+
+    .practice-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      gap: 1.25rem;
+      align-items: start;
+    }
+
+    .practice-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .practice-item {
+      padding: 0.6rem 0.7rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: #2a2a2a;
+      cursor: pointer;
+      color: var(--text);
+      font-size: 0.85rem;
+    }
+
+    .practice-item.active {
+      border-color: #f97316;
+      background: #3b1d0f;
+      color: #f97316;
+    }
+
+    .practice-tip {
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .lessons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .lesson-card {
+      border-radius: var(--radius);
+      background: var(--bg-alt);
+      padding: 0.9rem;
+      border: 1px solid var(--border);
+    }
+
+    .lesson-step {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.15rem;
+    }
+
+    .lesson-title {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: var(--text);
+    }
+
+    .lesson-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .lesson-list li { margin-bottom: 0.25rem; }
+
+    .other-tests {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .other-tests a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg-alt);
+      color: var(--text);
+      font-size: 0.88rem;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .other-tests a:hover {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+
+    .article-section {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .article-section h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .article-section h3 {
+      font-size: 1rem;
+      margin: 1rem 0 0.35rem;
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 2rem auto 1.5rem;
+      padding: 1.25rem 1.25rem 0;
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: underline;
+    }
+
+    /* ── FIX #3: Practice complete banner ── */
+    .practice-complete {
+      margin-top: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      background: var(--primary-soft);
+      border: 1px solid var(--primary);
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: minmax(0, 1fr); }
+      .practice-layout { grid-template-columns: minmax(0, 1fr); }
+      .lessons-grid { grid-template-columns: minmax(0, 1fr); }
+      .nav { padding-inline: 0.75rem; }
+      main { padding-inline: 0.75rem; }
+    }
+
+    /* ── FIX #4: Mobile hamburger breakpoint ── */
+    @media (max-width: 500px) {
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- FIX #11: Skip to content link for accessibility -->
+<a href="#main-content" class="skip-link">Skip to content</a>
+
+<header>
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-left">
+      <div class="nav-logo">TT</div>
+      <span class="brand-name">TigerType</span>
+    </div>
+    <div class="nav-links">
+      <a href="#test">Test</a>
+      <a href="#practice">Practice</a>
+      <a href="#lessons">Lessons</a>
+      <a href="#about">About</a>
+    </div>
+    <!-- FIX #4: Mobile hamburger toggle -->
+    <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="#test">Test</a>
+    <a href="#practice">Practice</a>
+    <a href="#lessons">Lessons</a>
+    <a href="#about">About</a>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <section id="test" class="hero">
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <h1>TigerType – Free Online Typing Test and Speed Trainer</h1>
+          <p>Hunt your highest WPM. Precision beats panic. Speed follows control.</p>
+          <p style="margin-top:1rem;">TigerType is a browser-based typing speed test designed to help students, professionals, and remote workers improve their words per minute (WPM) and typing accuracy. Whether you are preparing for a job assessment or building everyday productivity, structured typing practice makes a measurable difference.</p>
+          <p style="margin-top:1rem;">Use the <a href="#test" style="color:var(--primary);">TigerType typing test</a> to measure your speed, or improve accuracy in the <a href="#practice" style="color:var(--primary);">practice zone</a>.</p>
+        </div>
+        <div class="badge"><span>&#9679;</span> Focus mode</div>
+      </div>
+
+      <div class="controls-row">
+        <div class="control-group">
+          <span class="control-label" id="duration-label">Duration</span>
+          <div class="pill-toggle" id="test-duration" role="group" aria-labelledby="duration-label">
+            <button data-seconds="30" class="active">30s</button>
+            <button data-seconds="60">60s</button>
+            <button data-seconds="120">120s</button>
+          </div>
+        </div>
+        <div class="control-group">
+          <span class="control-label" id="difficulty-label">Difficulty</span>
+          <div class="pill-toggle" id="test-difficulty" role="group" aria-labelledby="difficulty-label">
+            <button data-level="easy" class="active">Easy</button>
+            <button data-level="medium">Medium</button>
+            <button data-level="hard">Hard</button>
+          </div>
+        </div>
+        <div class="control-group" style="margin-left:auto;">
+          <button class="btn btn-secondary" id="restart-test">Reset the Hunt</button>
+          <button class="btn btn-primary" id="start-test">Enter the Arena</button>
+        </div>
+      </div>
+
+      <div class="typing-area">
+        <div class="typing-text" id="test-text"></div>
+        <label for="test-input" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Type the passage above</label>
+        <input id="test-input" class="typing-input" type="text" autocomplete="off" placeholder="Start the test and begin typing here..." disabled />
+      </div>
+
+      <div class="stats-row">
+        <div class="stats-group">
+          <div class="stat">Time: <strong class="timer"><span id="timer-display">0.0</span> s</strong></div>
+          <div class="stat">WPM: <strong id="test-wpm">0</strong></div>
+          <div class="stat">Accuracy: <strong id="test-accuracy">100%</strong></div>
+          <div class="stat">Errors: <strong id="test-errors">0</strong></div>
+        </div>
+      </div>
+
+      <div id="test-summary" style="margin-top:0.75rem; font-size:0.9rem; color:var(--muted); min-height:1.4rem;"></div>
+      <div id="rank-progress" style="margin-top:0.5rem; font-size:0.85rem; color:var(--muted);"></div>
+      <div id="best-score" style="margin-top:0.25rem; font-size:0.85rem; color:var(--muted);"></div>
+    </div>
+    <!-- ── END of main test card ── -->
+
+    <div>
+      <div class="card" style="margin-bottom:1rem;">
+        <h3>How TigerType measures your skills</h3>
+        <p>TigerType is designed to feel like a focused workout, not a random test. Pick a duration and difficulty, hit <strong>Enter the Arena</strong>, and begin typing. With every keystroke we quietly track:</p>
+        <ul style="margin:0; padding-left:1.1rem; font-size:0.85rem; color:var(--muted);">
+          <li><strong>Words per minute (WPM)</strong> – how quickly you move through real text</li>
+          <li><strong>Accuracy</strong> – how many keystrokes hit the right character</li>
+          <li><strong>Errors</strong> – where your hands and eyes fall out of sync</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>TigerType training tips</h3>
+        <ul style="margin:0; padding-left:1.1rem; font-size:0.85rem; color:var(--muted);">
+          <li>Think of each test as practice, not a final exam. Aim to improve, not to impress.</li>
+          <li>Let your fingers follow a calm rhythm instead of sprinting and stopping.</li>
+          <li>Glance at the keyboard only if you must — your goal is to trust muscle memory.</li>
+          <li>Run the same test a few times in a row and watch your accuracy settle above 95%.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIX #1 & #6: Leaderboard and Popular Tests moved OUTSIDE the hero card -->
+  <section class="section" style="display:grid; grid-template-columns: minmax(0, 2.3fr) minmax(0, 1.2fr); gap:1.5rem; align-items:start; margin-top:1.5rem;">
+    <div class="card">
+      <h3>&#127942; TigerType Leaderboard</h3>
+      <p style="font-size:0.85rem; color:var(--muted);">Top speeds recorded on this device.</p>
+      <ol id="leaderboard-list"></ol>
+    </div>
+    <div class="card">
+      <h2>Popular Typing Tests</h2>
+      <div class="other-tests">
+        <a href="/1-minute-typing-test.html">1 Minute Typing Test</a>
+        <a href="/2-minute-typing-test.html">2 Minute Typing Test</a>
+        <a href="/3-minute-typing-test.html">3 Minute Typing Test</a>
+        <a href="/5-minute-typing-test.html">5 Minute Typing Test</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="practice" class="section">
+    <div class="section-header">
+      <div>
+        <h2>TigerType Practice Zone</h2>
+        <p>Slow things down and build real control. Practice on curated paragraphs with live WPM, accuracy, and error feedback — without the pressure of a countdown.</p>
+      </div>
+      <div class="control-group">
+        <span class="control-label" id="practice-difficulty-label">Difficulty</span>
+        <div class="pill-toggle" id="practice-difficulty" role="group" aria-labelledby="practice-difficulty-label">
+          <button data-level="easy" class="active">Easy</button>
+          <button data-level="medium">Medium</button>
+          <button data-level="hard">Hard</button>
+        </div>
+      </div>
+    </div>
+    <div class="practice-layout">
+      <div class="card">
+        <div class="typing-area">
+          <div class="typing-text" id="practice-text"></div>
+          <label for="practice-input" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Type the practice passage above</label>
+          <textarea id="practice-input" class="typing-input" rows="4" placeholder="Start typing here to practice..."></textarea>
+        </div>
+        <div class="stats-row">
+          <div class="stats-group">
+            <div class="stat">Practice time: <strong><span id="practice-time">0.0</span> s</strong></div>
+            <div class="stat">WPM: <strong id="practice-wpm">0</strong></div>
+            <div class="stat">Accuracy: <strong id="practice-accuracy">100%</strong></div>
+            <div class="stat">Errors: <strong id="practice-errors">0</strong></div>
+          </div>
+          <button class="btn btn-secondary" id="reset-practice">Reset Training</button>
+        </div>
+        <!-- FIX #3: Practice completion summary -->
+        <div id="practice-summary"></div>
+      </div>
+      <div class="card">
+        <h3>Practice Paragraphs</h3>
+        <p>Select a paragraph that matches your current level.</p>
+        <div class="practice-list" id="practice-list"></div>
+        <p class="practice-tip">TigerTip: Pick one paragraph and repeat it 3–5 times. First eliminate the red mistakes, then push for higher WPM.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="lessons" class="section">
+    <div class="section-header">
+      <div>
+        <h2>TigerType Lessons for Serious Beginners</h2>
+        <p>Build the habits that actually matter. These three lessons cover the foundation every skilled typist relies on — position, accuracy, and rhythm.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="lessons-grid">
+        <div class="lesson-card">
+          <div class="lesson-step">Lesson 1</div>
+          <div class="lesson-title">Home Row: Your TigerType Launchpad</div>
+          <ul class="lesson-list">
+            <li>Place your left hand on A, S, D, F and your right hand on J, K, L, ;. This is your neutral position.</li>
+            <li>Lightly rest your thumbs on the spacebar. Keep your wrists floating, not pressed into the desk.</li>
+            <li>Return to the home row after every key you press. This builds strong muscle memory.</li>
+            <li>Practice: slowly type "fj fj fj as df jk" for one minute without looking at the keyboard.</li>
+          </ul>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-step">Lesson 2</div>
+          <div class="lesson-title">Accuracy Before Tiger Speed</div>
+          <ul class="lesson-list">
+            <li>Your first goal is control, not speed. Fast but sloppy typing will hold you back later.</li>
+            <li>Type at a pace where you feel calm and in control of every key you press.</li>
+            <li>Use TigerType tests to track your accuracy. Aim for 95% or higher before pushing for more WPM.</li>
+            <li>Practice: run a 60-second test and focus on making fewer than five visible errors.</li>
+          </ul>
+        </div>
+        <div class="lesson-card">
+          <div class="lesson-step">Lesson 3</div>
+          <div class="lesson-title">Building Rhythm and Flow</div>
+          <ul class="lesson-list">
+            <li>Typing should feel like a steady stream, not a series of jumps and stops.</li>
+            <li>Read a few words ahead of where you are typing so your fingers always know what comes next.</li>
+            <li>Let your breathing stay slow and even. If you tense up, your accuracy will drop.</li>
+            <li>Practice: choose a medium passage and repeat it three times, aiming for smoother rhythm each round.</li>
+          </ul>
+        </div>
+      </div>
+      <p style="color:var(--muted); font-size:0.85rem; margin-top:1rem;">Updated 2026 · TigerType Educational Guide</p>
+    </div>
+  </section>
+
+  <div class="article-section">
+    <div class="card">
+      <h2>How to Improve Your Typing Speed and Accuracy</h2>
+      <p>Typing is no longer just a convenience skill. In a world of remote work, online exams, coding, and digital communication, typing speed and accuracy directly impact productivity and confidence.</p>
+      <h3>1. Focus on Accuracy Before Speed</h3>
+      <p>Many beginners try to increase their words per minute too quickly. Speed without accuracy creates bad habits. Instead of chasing a high WPM score, aim for at least 95% accuracy.</p>
+      <h3>2. Master the Home Row</h3>
+      <p>The home row keys (A, S, D, F for the left hand and J, K, L, ; for the right hand) are the foundation of touch typing.</p>
+      <h3>3. Practice in Short Daily Sessions</h3>
+      <p>Consistency beats intensity. Ten to fifteen minutes per day is more effective than one long session per week.</p>
+      <h3>4. Read Ahead While Typing</h3>
+      <p>Skilled typists do not look at one character at a time. They read one or two words ahead.</p>
+      <h3>5. Track Your Progress</h3>
+      <p>Using timed typing tests helps measure improvement objectively.</p>
+      <h3>6. Build Rhythm, Not Tension</h3>
+      <p>Typing should feel steady and controlled. Relaxed posture and controlled breathing improve accuracy and long-term endurance.</p>
+      <h3>Start Practicing Today</h3>
+      <p>Use the <a href="#test" style="color:var(--primary);">TigerType typing speed test</a> to measure your WPM, or train in the <a href="#practice" style="color:var(--primary);">practice zone</a>.</p>
+    </div>
+
+    <div class="card">
+      <p style="color:var(--muted); font-size:0.9rem;">Updated 2026 · TigerType Educational Guide</p>
+      <h2>The Science Behind Faster Typing</h2>
+      <p>Fast typing is not just about moving your fingers quickly. It is about how your brain, eyes, and muscles coordinate together.</p>
+      <h3>Muscle Memory and Neural Pathways</h3>
+      <p>Every time you type a word correctly, your brain reinforces a pattern. Over time, these patterns require less conscious effort.</p>
+      <h3>Why Accuracy Matters First</h3>
+      <p>When you type inaccurately, your brain reinforces incorrect movements. By prioritizing precision, you build cleaner motor patterns.</p>
+      <h3>The Role of Focus</h3>
+      <p>Distraction reduces typing performance. A clean, minimal interface helps reduce cognitive load and improves rhythm.</p>
+      <h3>Deliberate Practice vs Random Practice</h3>
+      <p>Deliberate practice involves repeating specific passages, reviewing mistakes, and intentionally correcting weak patterns.</p>
+      <h3>Consistency Over Intensity</h3>
+      <p>Improvement compounds over time. Even short daily practice sessions strengthen coordination.</p>
+    </div>
+
+    <div class="card">
+      <p style="color:var(--muted); font-size:0.9rem;">Updated 2026 · TigerType Educational Guide</p>
+      <h2>How to Type Faster: A Step-by-Step Plan for Beginners</h2>
+      <h3>Step 1: Stop Looking at the Keyboard</h3>
+      <p>Touch typing builds muscle memory. When you stop glancing down, your brain begins forming consistent key patterns.</p>
+      <h3>Step 2: Slow Down to Improve</h3>
+      <p>Paradoxically, slowing down increases long-term speed. Focus on typing clean lines of text with minimal corrections.</p>
+      <h3>Step 3: Practice Daily for 10–15 Minutes</h3>
+      <p>Consistency creates neural efficiency. Short daily sessions are more effective than occasional long sessions.</p>
+      <h3>Step 4: Use Timed Tests to Measure Growth</h3>
+      <p>Use the <a href="#test" style="color:var(--primary);">TigerType typing test</a> to monitor improvement objectively.</p>
+      <h3>Step 5: Prioritize Accuracy Above 95%</h3>
+      <p>High accuracy builds stable typing patterns. Speed naturally increases once precision becomes automatic.</p>
+    </div>
+
+    <div class="card">
+      <p style="color:var(--muted); font-size:0.9rem;">Updated 2026 · TigerType Educational Guide</p>
+      <h2>What Is a Good Typing Speed? Benchmarks by Age and Career</h2>
+      <p>A good typing speed depends on age, experience, and profession.</p>
+      <h3>Average Typing Speed by Age</h3>
+      <p>Most middle school students type between 20 and 35 WPM. Adults working in office environments commonly type between 40 and 60 WPM.</p>
+      <h3>Typing Speed by Career</h3>
+      <p>Data entry specialists often need at least 50 WPM. Journalists, coders, and writers benefit from 70+ WPM.</p>
+      <h3>Why Accuracy Matters More Than Raw Speed</h3>
+      <p>A typist who types 55 WPM at 98% accuracy will outperform someone typing 75 WPM with frequent errors.</p>
+      <h3>Setting Realistic Goals</h3>
+      <p>If you currently type 35 WPM, aim for 45 WPM with high accuracy. TigerType helps you measure both speed and accuracy.</p>
+    </div>
+
+    <div class="card">
+      <h2>Typing Speed Benchmarks: What Is a Good WPM?</h2>
+      <h3>30–40 WPM</h3>
+      <p>This is the average typing speed for many casual computer users.</p>
+      <h3>40–60 WPM</h3>
+      <p>Many office jobs expect typing speeds in this range.</p>
+      <h3>60–80 WPM</h3>
+      <p>This range represents strong typing proficiency.</p>
+      <h3>80–100+ WPM</h3>
+      <p>Advanced typists and transcriptionists often exceed 80 words per minute. Try the <a href="#test" style="color:var(--primary);">TigerType typing speed test</a> to measure your current WPM.</p>
+    </div>
+  </div>
+
+  <section id="about" class="section">
+    <div class="section-header">
+      <div>
+        <h2>About TigerType</h2>
+        <p>TigerType is built for people who take their typing seriously. The goal is simple: give you a clean, focused space to train speed and accuracy without noise, pop-ups, or distractions.</p>
+        <p>TigerType's distraction-free design encourages focus which aids in memory retention and muscle memory.</p>
+        <h3>About the Creator</h3>
+        <p>TigerType was created as an independent project focused on improving typing skills through simple, distraction-free tools.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:1.25rem;">
+      <h3>Why TigerType exists</h3>
+      <p>Most typing sites feel busy, gamified, or full of clutter. TigerType keeps things sharp and minimal so you can focus on what matters.</p>
+      <p>Whether you are preparing for office work, coding, online exams, or just want to feel faster and more confident at the keyboard, TigerType gives you structured practice, timed tests, and simple lessons in one place.</p>
+    </div>
+
+    <div class="card">
+      <h3>Frequently Asked Questions</h3>
+      <div style="margin-top:0.5rem; display:flex; flex-direction:column; gap:0.6rem; font-size:0.9rem;">
+        <div>
+          <strong>Do you store what I type?</strong>
+          <p style="margin:0.2rem 0 0; color:var(--muted);">No. Everything you type is processed in your browser. TigerType does not save your text.</p>
+        </div>
+        <div>
+          <strong>Is TigerType really free?</strong>
+          <p style="margin:0.2rem 0 0; color:var(--muted);">Yes. You can use the tests, practice mode, and lessons for free.</p>
+        </div>
+        <div>
+          <strong>How accurate are the WPM and accuracy scores?</strong>
+          <p style="margin:0.2rem 0 0; color:var(--muted);">TigerType follows the standard typing formula: every 5 characters count as one word.</p>
+        </div>
+        <div>
+          <strong>How often should I practice?</strong>
+          <p style="margin:0.2rem 0 0; color:var(--muted);">Short daily sessions work best. Even 10–15 minutes per day of focused practice adds up quickly.</p>
+        </div>
+        <div>
+          <strong>Can I use TigerType at work or school?</strong>
+          <p style="margin:0.2rem 0 0; color:var(--muted);">Yes. TigerType runs in the browser and requires no installation.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1.25rem;">
+      <h3>Privacy &amp; Data</h3>
+      <p>TigerType is designed to be a low-friction training tool. The typing you do here is processed directly in your browser.</p>
+      <p>TigerType does not store the text you type or your individual test results on a server.</p>
+      <p style="margin-bottom:0;">If this policy changes, this section will be updated in clear language. For questions, contact: <strong>tigertype.app@gmail.com</strong></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <span>&copy; <span id="year"></span> TigerType. Free typing test and WPM trainer built for focused skill development.</span>
+  <span>
+    <a href="terms.html">Terms</a> &middot;
+    <a href="contact.html">Contact</a> &middot;
+    <a href="privacy.html">Privacy Policy</a> &middot;
+    <a href="mailto:tigertype.app@gmail.com">tigertype.app@gmail.com</a>
+  </span>
+</footer>
+
+<script>
+/* ── Hamburger menu toggle ── */
+(function() {
+  var toggle = document.getElementById("nav-toggle");
+  var menu = document.getElementById("mobile-menu");
+  if (toggle && menu) {
+    toggle.addEventListener("click", function() {
+      var open = menu.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", open);
+      toggle.innerHTML = open ? "&#10005;" : "&#9776;";
+    });
+    menu.querySelectorAll("a").forEach(function(link) {
+      link.addEventListener("click", function() {
+        menu.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.innerHTML = "&#9776;";
+      });
+    });
+  }
+})();
+
+/* ── Passages ── */
+var passages = {
+  easy: [
+    "Good typing starts with control. Press each key deliberately and let speed build naturally over time.",
+    "Keep your eyes on the screen and trust your fingers to find the right keys without looking down.",
+    "Calm hands create accurate results. Steady rhythm builds speed more reliably than rushing ever will.",
+    "Focus on one word at a time and let your fingers move through the sentence without hesitation.",
+    "Every accurate keystroke builds a pattern your hands will remember the next time you sit down to type."
+  ],
+  medium: [
+    "Consistent typing practice strengthens muscle memory and improves efficiency across all digital tasks.",
+    "Reading slightly ahead while typing creates smoother rhythm and reduces the number of hesitations.",
+    "Structured repetition produces measurable improvements in words per minute over days of practice.",
+    "Typing with intention means placing each character cleanly rather than racing through the text.",
+    "The goal of every practice session is not perfection but honest improvement over your last attempt."
+  ],
+  hard: [
+    "Deliberate practice and sustained attention are the foundation of long-term typing fluency and speed.",
+    "Experienced typists rely on neural pattern reinforcement rather than conscious searching for each key.",
+    "Typing efficiency increases when rhythm, breathing, and relaxed posture are consistently maintained.",
+    "The fastest typists do not think about individual letters — they process entire words as single movements.",
+    "Sustained accuracy above ninety-five percent is the clearest signal that speed gains will follow naturally."
+  ]
+};
+
+function getRandomPassage(level) {
+  var list = passages[level] || passages.easy;
+  return list[Math.floor(Math.random() * list.length)];
+}
+
+function renderText(container, text) {
+  container.innerHTML = "";
+  text.split("").forEach(function(char, i) {
+    var span = document.createElement("span");
+    span.textContent = char;
+    if (i === 0) span.classList.add("current");
+    container.appendChild(span);
+  });
+}
+
+function computeStats(original, typed, seconds) {
+  var minutes = Math.max(seconds / 60, 0.0001);
+  var correct = 0, errors = 0;
+  var len = Math.min(original.length, typed.length);
+  for (var i = 0; i < len; i++) {
+    if (typed[i] === original[i]) correct++;
+    else errors++;
+  }
+  if (typed.length > original.length) errors += typed.length - original.length;
+  var wpm = Math.round((typed.length / 5) / minutes);
+  var accuracy = typed.length === 0 ? 100 : Math.round((correct / typed.length) * 100);
+  return { wpm: Math.max(0, wpm), accuracy: Math.max(0, Math.min(100, accuracy)), errors: errors };
+}
+
+function updateHighlight(container, original, typed) {
+  var spans = container.querySelectorAll("span");
+  spans.forEach(function(s) { s.classList.remove("correct","incorrect","current"); });
+  for (var i = 0; i < spans.length; i++) {
+    if (typed[i] == null) break;
+    if (typed[i] === original[i]) spans[i].classList.add("correct");
+    else spans[i].classList.add("incorrect");
+  }
+  if (spans[typed.length]) spans[typed.length].classList.add("current");
+}
+
+function getTigerRank(wpm) {
+  if (wpm >= 110) return "Apex Tiger \uD83D\uDC05";
+  if (wpm >= 90) return "Alpha";
+  if (wpm >= 70) return "Predator";
+  if (wpm >= 50) return "Hunter";
+  if (wpm >= 30) return "Stalker";
+  return "Cub";
+}
+
+function getRankProgress(wpm) {
+  var ranks = [
+    {name:"Cub",min:0},{name:"Stalker",min:30},{name:"Hunter",min:50},
+    {name:"Predator",min:70},{name:"Alpha",min:90},{name:"Apex Tiger",min:110}
+  ];
+  var current = ranks[0], next = null;
+  for (var i = 0; i < ranks.length; i++) {
+    if (wpm >= ranks[i].min) { current = ranks[i]; next = ranks[i+1]; }
+  }
+  if (!next) return "\uD83C\uDFC6 Apex Tiger Achieved";
+  var percent = Math.min(100, Math.floor(((wpm-current.min)/(next.min-current.min))*100));
+  return current.name + " Rank<div style=\"background:#2a2a2a;border-radius:6px;height:10px;margin:6px 0;\"><div style=\"width:"+percent+"%;height:100%;background:#f97316;border-radius:6px;\"></div></div>Next Rank: " + next.name + " (" + next.min + " WPM)";
+}
+
+/* ── Leaderboard ── */
+var leaderboard = [];
+function loadLeaderboard() {
+  try {
+    var stored = localStorage.getItem("tigertype_leaderboard");
+    if (stored) leaderboard = JSON.parse(stored);
+  } catch(e) {}
+  updateLeaderboard();
+}
+function saveLeaderboard() {
+  try { localStorage.setItem("tigertype_leaderboard", JSON.stringify(leaderboard)); } catch(e) {}
+}
+function updateLeaderboard() {
+  var list = document.getElementById("leaderboard-list");
+  if (!list) return;
+  list.innerHTML = "";
+  leaderboard.sort(function(a,b) { return b.wpm - a.wpm; }).slice(0,10).forEach(function(score) {
+    var li = document.createElement("li");
+    li.textContent = score.wpm + " WPM \u2014 " + score.accuracy + "% accuracy";
+    list.appendChild(li);
+  });
+}
+
+/* ── Typing Test ── */
+var testText = "", testLevel = "easy", testDuration = 30;
+var testStart = null, testInterval = null;
+
+var textEl = document.getElementById("test-text");
+var inputEl = document.getElementById("test-input");
+var wpmEl = document.getElementById("test-wpm");
+var accEl = document.getElementById("test-accuracy");
+var errEl = document.getElementById("test-errors");
+var timerEl = document.getElementById("timer-display");
+
+function initTest() {
+  clearInterval(testInterval);
+  testStart = null;
+  testText = getRandomPassage(testLevel);
+  renderText(textEl, testText);
+  inputEl.value = "";
+  inputEl.disabled = true;
+  wpmEl.textContent = "0";
+  accEl.textContent = "100%";
+  errEl.textContent = "0";
+  timerEl.textContent = "0.0";
+  document.getElementById("test-summary").innerHTML = "";
+  document.getElementById("rank-progress").innerHTML = "";
+}
+
+function startTest() {
+  testStart = performance.now();
+  inputEl.disabled = false;
+  inputEl.focus();
+  testInterval = setInterval(function() {
+    var elapsed = (performance.now() - testStart) / 1000;
+    var remaining = Math.max(0, testDuration - elapsed);
+    timerEl.textContent = remaining.toFixed(1);
+    var typed = inputEl.value;
+    var stats = computeStats(testText, typed, elapsed);
+    wpmEl.textContent = stats.wpm;
+    accEl.textContent = stats.accuracy + "%";
+    errEl.textContent = stats.errors;
+    updateHighlight(textEl, testText, typed);
+    if (remaining <= 0) {
+      clearInterval(testInterval);
+      inputEl.disabled = true;
+      var rank = getTigerRank(stats.wpm);
+      document.getElementById("test-summary").innerHTML = "\uD83C\uDFC6 Rank: <strong>" + rank + "<\/strong><br>\u26A1 WPM: " + stats.wpm + " | Accuracy: " + stats.accuracy + "% | Errors: " + stats.errors;
+      document.getElementById("rank-progress").innerHTML = getRankProgress(stats.wpm);
+      leaderboard.push({ wpm: stats.wpm, accuracy: stats.accuracy });
+      saveLeaderboard();
+      updateLeaderboard();
+    }
+  }, 100);
+}
+
+document.getElementById("start-test").addEventListener("click", function() { initTest(); startTest(); });
+document.getElementById("restart-test").addEventListener("click", initTest);
+
+document.getElementById("test-duration").addEventListener("click", function(e) {
+  if (e.target.tagName !== "BUTTON") return;
+  document.querySelectorAll("#test-duration button").forEach(function(b) { b.classList.remove("active"); });
+  e.target.classList.add("active");
+  testDuration = parseInt(e.target.dataset.seconds, 10);
+  initTest();
+});
+
+document.getElementById("test-difficulty").addEventListener("click", function(e) {
+  if (e.target.tagName !== "BUTTON") return;
+  document.querySelectorAll("#test-difficulty button").forEach(function(b) { b.classList.remove("active"); });
+  e.target.classList.add("active");
+  testLevel = e.target.dataset.level;
+  initTest();
+});
+
+/* ── Practice Mode ── */
+var practiceLevel = "easy", practiceText = "";
+var practiceStart = null, practiceInterval = null;
+var practiceFinished = false;
+
+var pText = document.getElementById("practice-text");
+var pInput = document.getElementById("practice-input");
+var pWpm = document.getElementById("practice-wpm");
+var pAcc = document.getElementById("practice-accuracy");
+var pErr = document.getElementById("practice-errors");
+var pTime = document.getElementById("practice-time");
+var pSummary = document.getElementById("practice-summary");
+
+function initPracticeList() {
+  var container = document.getElementById("practice-list");
+  if (!container) return;
+  container.innerHTML = "";
+  Object.keys(passages).forEach(function(level) {
+    passages[level].forEach(function(text) {
+      var item = document.createElement("div");
+      item.className = "practice-item";
+      item.textContent = text.substring(0, 80) + "...";
+      item.addEventListener("click", function() {
+        document.querySelectorAll(".practice-item").forEach(function(el) { el.classList.remove("active"); });
+        item.classList.add("active");
+        practiceText = text;
+        renderText(pText, practiceText);
+        pInput.value = "";
+        clearInterval(practiceInterval);
+        practiceStart = null;
+        practiceFinished = false;
+        pWpm.textContent = "0";
+        pAcc.textContent = "100%";
+        pErr.textContent = "0";
+        pTime.textContent = "0.0";
+        pSummary.innerHTML = "";
+        pInput.disabled = false;
+        pInput.focus();
+      });
+      container.appendChild(item);
+    });
+  });
+}
+
+function initPractice() {
+  practiceText = getRandomPassage(practiceLevel);
+  renderText(pText, practiceText);
+  var firstItem = document.querySelector(".practice-item");
+  if (firstItem) {
+    document.querySelectorAll(".practice-item").forEach(function(el) { el.classList.remove("active"); });
+    firstItem.classList.add("active");
+  }
+  pInput.value = "";
+  pInput.disabled = false;
+  practiceFinished = false;
+  pWpm.textContent = "0";
+  pAcc.textContent = "100%";
+  pErr.textContent = "0";
+  pTime.textContent = "0.0";
+  pSummary.innerHTML = "";
+}
+
+/* FIX #3: Practice completion detection */
+function checkPracticeComplete(typed, elapsed) {
+  if (practiceFinished) return;
+  if (typed.length >= practiceText.length) {
+    practiceFinished = true;
+    clearInterval(practiceInterval);
+    pInput.disabled = true;
+    var stats = computeStats(practiceText, typed, elapsed);
+    var rank = getTigerRank(stats.wpm);
+    pSummary.innerHTML = '<div class="practice-complete">' +
+      '\uD83C\uDF1F <strong>Passage complete!</strong><br>' +
+      '\u26A1 WPM: ' + stats.wpm + ' | Accuracy: ' + stats.accuracy + '% | Errors: ' + stats.errors + '<br>' +
+      'Rank: <strong>' + rank + '</strong>' +
+      '</div>';
+  }
+}
+
+pInput.addEventListener("input", function() {
+  if (practiceFinished) return;
+  if (!practiceStart) {
+    practiceStart = performance.now();
+    practiceInterval = setInterval(function() {
+      var elapsed = (performance.now() - practiceStart) / 1000;
+      pTime.textContent = elapsed.toFixed(1);
+      var typed = pInput.value;
+      var stats = computeStats(practiceText, typed, elapsed);
+      pWpm.textContent = stats.wpm;
+      pAcc.textContent = stats.accuracy + "%";
+      pErr.textContent = stats.errors;
+      updateHighlight(pText, practiceText, typed);
+      checkPracticeComplete(typed, elapsed);
+    }, 120);
+  }
+});
+
+document.getElementById("practice-difficulty").addEventListener("click", function(e) {
+  if (e.target.tagName !== "BUTTON") return;
+  document.querySelectorAll("#practice-difficulty button").forEach(function(b) { b.classList.remove("active"); });
+  e.target.classList.add("active");
+  practiceLevel = e.target.dataset.level;
+  clearInterval(practiceInterval);
+  practiceStart = null;
+  initPractice();
+});
+
+document.getElementById("reset-practice").addEventListener("click", function() {
+  clearInterval(practiceInterval);
+  practiceStart = null;
+  initPractice();
+});
+
+/* ── Init ── */
+initTest();
+initPractice();
+initPracticeList();
+loadLeaderboard();
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
